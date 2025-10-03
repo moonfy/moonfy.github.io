@@ -8,7 +8,6 @@
  
 | 类型 | 说明 | 消耗点数 | 运行状态 | 按次包月 |
 |:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
-| [HCaptchaTaskProxyless](/zh-CN/HCaptchaTaskProxyless.md)| HCaptcha 协议接口,使用内置代理，目前平均成功率30%，失败不扣点           | `7` | ✅  |  ❌ |
 | [RecaptchaV2TaskProxyless](/zh-CN/RecaptchaV2TaskProxyless.md)           | reCaptchaV2协议接口,使用内置代理， 任务耗时140s         | `4` | ✅  |  ✅ | 
 | [RecaptchaV2TaskProxylessS9](https://1captcha.apifox.cn/333028711e0)           | reCaptchaV2协议高分接口,使用内置代理，任务耗时20S         | `14` | ✅  |  ✅ | 
 | [RecaptchaV2EnterpriseTaskProxyless](https://1captcha.apifox.cn/333031438e0)           | reCaptchaV2协议企业版接口,使用内置代理 ，任务耗时20S          | `14` | ✅  |  ✅ | 
