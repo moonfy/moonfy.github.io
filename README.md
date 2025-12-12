@@ -8,15 +8,15 @@
  
 | 类型 | 说明 | 消耗点数 | 运行状态 | 按次包月 |
 |:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
-| [RecaptchaV2TaskProxyless](/zh-CN/RecaptchaV2TaskProxyless.md)           | reCaptchaV2协议接口,使用内置代理， 任务耗时140s         | `4` | ✅  |  ✅ | 
-| [RecaptchaV2TaskProxylessS9](https://1captcha.apifox.cn/333028711e0)           | reCaptchaV2协议高分接口,使用内置代理，任务耗时20S         | `14` | ✅  |  ✅ | 
-| [RecaptchaV2EnterpriseTaskProxyless](https://1captcha.apifox.cn/333031438e0)           | reCaptchaV2协议企业版接口,使用内置代理 ，任务耗时20S          | `14` | ✅  |  ✅ | 
-| [RecaptchaV2SEnterpriseTaskProxyless](https://1captcha.apifox.cn/333031715e0)           | reCaptchaV2协议企业版接口，带s参数,使用内置代理  ，任务耗时20S         | `14` | ✅  |  ✅ | 
+| [RecaptchaV2TaskProxyless](/zh-CN/RecaptchaV2TaskProxyless.md)           | reCaptchaV2协议接口,使用内置代理， 任务耗时140s         | `6` | ✅  |  ✅ | 
+| [RecaptchaV2TaskProxylessS9](https://1captcha.apifox.cn/333028711e0)           | reCaptchaV2协议高分接口,使用内置代理，任务耗时20S         | `21` | ✅  |  ✅ | 
+| [RecaptchaV2EnterpriseTaskProxyless](https://1captcha.apifox.cn/333031438e0)           | reCaptchaV2协议企业版接口,使用内置代理 ，任务耗时20S          | `21` | ✅  |  ✅ | 
+| [RecaptchaV2SEnterpriseTaskProxyless](https://1captcha.apifox.cn/333031715e0)           | reCaptchaV2协议企业版接口，带s参数,使用内置代理  ，任务耗时20S         | `21` | ✅  |  ✅ | 
 | [TurnstileTaskProxyless](/zh-CN/TurnstileTaskProxyless.md)              | CloudflareTurnstile协议接口              | `6` |✅  |  ✅|
 | [CloudFlareTask](/zh-CN/CloudFlareTask.md)                         | CloudFlare5秒盾协议接口,需要传入代理     | `7` | ✅ |   ✅|
 | [RecaptchaV3TaskProxyless](/zh-CN/RecaptchaV3TaskProxyless.md)               | reCaptcha V3 协议接口,使用内置代理        | `6` |✅   |  ✅|
-| [RecaptchaV3TaskProxylessS9](/zh-CN/RecaptchaV3TaskProxylessS9.md)               | reCaptcha V3高分协议接口,使用内置代理       | `14` |✅   |  ✅|
-| [RecaptchaV3EnterpriseTaskProxyless](/zh-CN/RecaptchaV3EnterpriseTaskProxyless.md)    | 企业版 reCaptcha V3 协议接口,使用内置代理| `14` |✅  |  ✅|
+| [RecaptchaV3TaskProxylessS9](/zh-CN/RecaptchaV3TaskProxylessS9.md)               | reCaptcha V3高分协议接口,使用内置代理       | `21` |✅   |  ✅|
+| [RecaptchaV3EnterpriseTaskProxyless](/zh-CN/RecaptchaV3EnterpriseTaskProxyless.md)    | 企业版 reCaptcha V3 协议接口,使用内置代理| `21` |✅  |  ✅|
 | [ImageToTextTask](/zh-CN/ImageToTextTask.md)    | ImageToTextTask协议接口,可以识别Yandex等多类OCR图片 ![example7](https://github.com/user-attachments/assets/e0fe623c-0771-406b-87e1-3318796c7282) | `6` |✅  |  ✅ |
 
 ### 教程
