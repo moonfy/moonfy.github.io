@@ -8,7 +8,7 @@
  
 | 类型 | 说明 | 消耗点数 | 运行状态 | 按次包月 |
 |:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
-| [RecaptchaV2TaskProxyless](/zh-CN/RecaptchaV2TaskProxyless.md)           | reCaptchaV2协议接口,使用内置代理， 任务耗时140s         | `6` | ✅  |  ✅ | 
+| [RecaptchaV2TaskProxyless](/zh-CN/RecaptchaV2TaskProxyless.md)           | reCaptchaV2协议接口,使用内置代理， 任务耗时140s,包月不限量，价格更划算         | `6` | ✅  |  ✅ | 
 | [RecaptchaV2TaskProxylessS9](https://1captcha.apifox.cn/333028711e0)           | reCaptchaV2协议高分接口,使用内置代理，任务耗时20S         | `21` | ✅  |  ✅ | 
 | [RecaptchaV2EnterpriseTaskProxyless](https://1captcha.apifox.cn/333031438e0)           | reCaptchaV2协议企业版接口,使用内置代理 ，任务耗时20S          | `21` | ✅  |  ✅ | 
 | [RecaptchaV2SEnterpriseTaskProxyless](https://1captcha.apifox.cn/333031715e0)           | reCaptchaV2协议企业版接口，带s参数,使用内置代理  ，任务耗时20S         | `21` | ✅  |  ✅ | 
