@@ -2,7 +2,7 @@
 ### 目前支持的接口
 官网地址 https://1captcha.vip  ，使用充值过程中如有任何问题请创建工单,一般24小时内处理完毕
 新用户加群联系管理赠送 1000 测试点 QQ群：717826273  ![52555d689e54fbef453e53e0021274d](https://github.com/user-attachments/assets/9c81c975-5ee3-46ea-aedc-f7606039c6c6)
-
+Telegram: https://t.me/+IebsT7icLW81NzQ1
 ### 在线调试及代码生成工具:https://1captcha.apifox.cn/
 
  
