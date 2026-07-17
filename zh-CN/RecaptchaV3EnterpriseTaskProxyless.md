@@ -1,48 +1,53 @@
-
 [`返回首页`](../README.md)
 #### 创建任务
 通过 createTask方法 创建识别任务
 
-请求节点： 
+请求节点：
 国际节点
- https://api.1captcha.vip 
- 
+ https://api.1captcha.vip
+
 
 请求地址： https://api.1captcha.vip/createTask
 
 请求格式：POST application/json
 
+RecaptchaV3 Enterprise 平均识别时间在130S左右
 #### 对象结构
+ 
 
-注意：某些网站可能需要ua匹配，请直接使用我们指纹所用的ua，一般我们会跟随chrome版本进行更新
+> ⚠️ v3 关键：求解用的 IP 与 UserAgent 必须与客户端提交表单时**一致**，否则分数会大幅下降（可能低至 0.1）。强烈建议在 task 中携带与业务侧相同的 proxyAddress/proxyPort 和 userAgent，并使用 sticky session。
 
-user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36
-
-sec-ch-ua: "Google Chrome";v="137", "Not-A.Brand";v="24", "Chromium";v="137"
-
-
-| 属性 | 类型 | 必须 | 说明 | 
+| 属性 | 类型 | 必须 | 说明 |
 |:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
-| type              | string        | 是 | RecaptchaV3EnterpriseTaskProxyless   |  
-| websiteURL        | string        | 是 | RecaptchaV3企业版 网页地址，一般固定值。   |  
-| websiteKey        | string        | 是 | RecaptchaV3企业版 网站密钥，固定值。   |  
-| pageAction        | string        | 是 | 此值必须正确，否则识别的结果无效   | 
-| checkField        | string        | 否 | reload 包中 protobuf 9的新值，可进行二次验证   | 
-| websiteTitle        | string        | 否 | 加载recaptcha的网站页面，使用js控制台运行“document.title”获取title，部分网站传该值可获得较高分   | 
-| isInvisible        | Bool       | 否 | 对于reCaptcha V3类型， 该参数一般都为true，如果用户不提供，则默认自动设置为true   | 
+| type              | string        | 是 | RecaptchaV3EnterpriseTaskProxyless   |
+| websiteURL        | string        | 是 | ReCaptchaV3 企业版网页地址，一般固定值。   |
+| websiteKey        | string        | 是 | ReCaptchaV3 企业版网站密钥，固定值。   |
+| minScore          | string        | 是 | 期望最低分，如 "0.9"。   |
+| pageAction        | string        | 是 | 页面 action，须与站点一致，如 "login"。   |
+| recaptchaDataSValue | string      | 否 | 企业版常见的 data-s 值，站点可能动态生成/隐藏。   |
+| userAgent         | string        | 否 | 浏览器 UA，v3 强烈建议携带，需与业务侧一致。   |
+| cookies           | string        | 否 | 站点 cookie。   |
+| proxyType         | string        | 否 | 代理类型：http / https / socks4 / socks5，默认 http。   |
+| proxyAddress      | string        | 否 | 代理主机。   |
+| proxyPort         | int           | 否 | 代理端口。   |
+| proxyLogin        | string        | 否 | 代理用户名。   |
+| proxyPassword     | string        | 否 | 代理密码。   |
+
+> 说明：平台内部会以上游文档规定的 `RecaptchaV3EnterpriseTask` 类型提交，对外仍使用 `...Proxyless` 名称；`data-s` 直接以 `recaptchaDataSValue` 传给上游。企业版还需在上游 Options 中开启"通过 API 接收 proxy / userAgent"，否则传入的 proxy/UA 会被忽略。
 
 #### 请求示例
 
- 
+
 ```
 {
-    "clientKey": "cc9c18d3e263515c2c072b36a7125eecc078xxxx",
+    "clientKey": "cc9c18d3e263515c2c072b36a7125eecc078618f",
     "task": {
-        "websiteURL" : "https://antcpt.com/score_detector",
-        "websiteKey" : "6LcR_okUAAAAAPYrPe-HK_0RULO1aZM15ENyM-Mf",
-        "pageAction" : "homepage", // 有单独找action值的教程，看上面说明
-        "websiteTitle":"Score detector for reCAPTCHA v3",
-        "type" : "RecaptchaV3EnterpriseTaskProxyless"
+        "websiteURL": "https://example.com/submit",
+        "websiteKey": "6LdKlZEpAAAAAAOQjzC2v_d36tWxCl6dWsozdSy9",
+        "type": "RecaptchaV3EnterpriseTaskProxyless",
+        "minScore": "0.9",
+        "pageAction": "submit",
+        "recaptchaDataSValue": "data-s值" // 可选，站点需要 data-s 时携带
     }
 }
 ```
@@ -61,14 +66,15 @@ sec-ch-ua: "Google Chrome";v="137", "Not-A.Brand";v="24", "Chromium";v="137"
 #### 获取结果
 使用 getTaskResult 方法获取识别结果
 
-请求节点： 
+请求节点：
 国际节点
- https://api.1captcha.vip 
- 
+ https://api.1captcha.vip
+
 请求地址： https://api.1captcha.vip/getTaskResult
 
 请求格式：POST application/json
- 
+
+根据系统负载，您将在  120s 的时间间隔内得到结果，300秒自动超时
 
 
 ```
@@ -79,14 +85,14 @@ sec-ch-ua: "Google Chrome";v="137", "Not-A.Brand";v="24", "Chromium";v="137"
 ```
 #### 响应结果
 
-| 属性 | 类型 |  说明 | 
+| 属性 | 类型 |  说明 |
 |:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
-| errorId              | Integer        | 错误提示： 0 - 没有错误，1 - 有错误   |  
-| errorCode            | string         | 错误代码   |  
-| errorDescription     | string         | 错误详细描述   |  
-| status               | string         | **processing** - 正在识别中，请3秒后重试。    **ready** - 识别完成，在solution参数中找到结果   |  
-| solution             | Object         | 识别结果，不同类型的任务结果会有所区别。   |  
-| gRecaptchaResponse   | string         | 识别结果：response值。一次性使用，有效期120s，建议在60s内使用。   |  
+| errorId              | Integer        | 错误提示： 0 - 没有错误，1 - 有错误   |
+| errorCode            | string         | 错误代码   |
+| errorDescription     | string         | 错误详细描述   |
+| status               | string         | **processing** - 正在识别中，请3秒后重试。    **ready** - 识别完成，在solution参数中找到结果   |
+| solution             | Object         | 识别结果，不同类型的任务结果会有所区别。   |
+| gRecaptchaResponse   | string         | 识别结果：response值。一次性使用，有效期120s，建议在60s内使用。   |
 
 
 #### 响应示例
@@ -97,10 +103,7 @@ sec-ch-ua: "Google Chrome";v="137", "Not-A.Brand";v="24", "Chromium";v="137"
     "errorCode": null,
     "errorDescription": null,
     "solution": {
-        "gRecaptchaResponse": "03AGdBq25SxXT-pmSeBXjzScW-EiocHwwpwqtk1QXlJnGnU......"，
-        "cookies": {
-      _GRECAPTCHA: '09ANMylNCtUe-OQKWe7FMbTxJq5RJkVt4ZzBFamXKETH0B_StVVQeGOwTxeyph_XvQ9mNw50EN_TlO9958bEtYeSQ'
-    }
+        "gRecaptchaResponse": "03AGdBq25SxXT-pmSeBXjzScW-EiocHwwpwqtk1QXlJnGnU......"
     },
     "status": "ready"
 }
@@ -113,3 +116,4 @@ sec-ch-ua: "Google Chrome";v="137", "Not-A.Brand";v="24", "Chromium";v="137"
 
 - 出错了：当errorId 大于0，请根据errorDescription了解出错误信息
 
+- v3 拿到 gRecaptchaResponse 后，请用**与求解相同的代理和 UserAgent**回填表单提交，才能保证分数有效。
