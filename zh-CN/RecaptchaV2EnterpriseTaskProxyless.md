@@ -13,11 +13,7 @@
 
 RecaptchaV2 Enterprise 平均识别时间在130S左右
 #### 对象结构
-：某些网站可能需要ua匹配，请直接使用我们指纹所用的ua，一般我们会紧接着chrome版本进行更新
-
-ua：Mozilla/5.0（Windows NT 10.0；Win64；x64）AppleWebKit/537.36（KHTML，如 Gecko）Chrome/137.0.0.0 Safari/537.36
-
-sec-ch-ua：“Google Chrome”；v="137”，“非品牌”；v="24”，“Chromium”；v="137"
+ 
 
 | 属性 | 类型 | 必须 | 说明 |
 |:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|:--------------------------------------------:|
@@ -25,7 +21,6 @@ sec-ch-ua：“Google Chrome”；v="137”，“非品牌”；v="24”，“Ch
 | websiteURL        | string        | 是 | ReCaptchaV2 企业版网页地址，一般固定值。   |
 | websiteKey        | string        | 是 | ReCaptchaV2 企业版网站密钥，固定值。   |
 | recaptchaDataSValue | string      | 否 | 企业版常见的 data-s 值，站点可能动态生成/隐藏。   |
-| enterprisePayload | object        | 否 | 另一种传 data-s 的方式：{ "s": "data-s值" }。   |
 | isInvisible       | bool          | 否 | 非必须，如果遇到隐型版本的请传true值   |
 | userAgent         | string        | 否 | 浏览器 UA，建议携带，需与业务侧一致。   |
 | cookies           | string        | 否 | 站点 cookie。   |
@@ -47,7 +42,7 @@ sec-ch-ua：“Google Chrome”；v="137”，“非品牌”；v="24”，“Ch
         "websiteURL": "https://example.com/login",
         "websiteKey": "6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-",
         "type": "RecaptchaV2EnterpriseTaskProxyless",
-        "enterprisePayload": { "s": "data-s值" }, // 可选，站点需要 data-s 时携带
+        "recaptchaDataSValue": "data-s值", // 可选，站点需要 data-s 时携带
         "isInvisible": false // isinvisable类型才需要添加 true 值
     }
 }
