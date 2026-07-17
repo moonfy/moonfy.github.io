@@ -11,7 +11,7 @@
 
 请求格式：POST application/json
 
-RecaptchaV2 Enterprise 平均识别时间在130S左右
+RecaptchaV2 Enterprise 平均识别时间在10S左右
 #### 对象结构
  
 
