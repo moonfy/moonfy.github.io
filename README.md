@@ -13,7 +13,7 @@ Telegram: https://t.me/+IebsT7icLW81NzQ1
 | [RecaptchaV2TaskProxylessS9](https://1captcha.apifox.cn/333028711e0)           | reCaptchaV2协议高分接口,使用内置代理，任务耗时20S         | `21` | ✅  |       ❌️  | 
 | [RecaptchaV2EnterpriseTaskProxyless](https://1captcha.apifox.cn/333031438e0)           | reCaptchaV2协议企业版接口,使用内置代理 ，任务耗时90S          | `21` | ✅  |       ✅  | 
 | [TurnstileTaskProxyless](/zh-CN/TurnstileTaskProxyless.md)              | CloudflareTurnstile协议接口              | `6` |✅  | ✅   |
-| [HCaptchaTask](https://1captcha.apifox.cn/331114665e0)              | HCaptchaTask协议接口              | `7` |✅  | 限量包月   |
+| [HCaptchaClassification](/zh-CN/HCaptchaClassification.md)              | HCaptchaClassification图片接口              | `8` |✅  | 限量包月   |
 | [CloudFlareTask](/zh-CN/CloudFlareTask.md)                         | CloudFlare5秒盾协议接口,需要传入代理     | `7` | ✅ |   ✅|
 | [RecaptchaV3TaskProxylessS9](/zh-CN/RecaptchaV3TaskProxylessS9.md)               | reCaptcha V3高分协议接口,使用内置代理       | `21` |✅   |      ❌️  |
 | [RecaptchaV3EnterpriseTaskProxyless](/zh-CN/RecaptchaV3EnterpriseTaskProxyless.md)    | 企业版 reCaptcha V3 协议接口,使用内置代理| `21` |✅  |      ❌️  |
@@ -37,14 +37,12 @@ Telegram: https://t.me/+IebsT7icLW81NzQ1
 * `clientKey`: 用户令牌, 调用服务需要传入该参数, 在用户主页可以查看
 
 
-# 充值点数说明:充值最高赠送20%,打造全球最低价格验证码平台
+# 充值点数说明:充值最高赠送10%,打造全球最低价格验证码平台
 
 | 充值点数            | 赠送比例   
 |:-----------------:|:-----------------:|
-| `10,000` 点     | `5%` |
-| `100,000` 点     | `10%` |
-| `2000,000` 点     | `15%` |
-| `5,000,000` 点  | `20%` |
+| `100,000` 点     | `5%` |
+| `5,000,000` 点  | `10%` |
  
 
 ### 返利说明
