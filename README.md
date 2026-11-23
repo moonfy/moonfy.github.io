@@ -14,6 +14,7 @@ Telegram: https://t.me/+IebsT7icLW81NzQ1
 | [RecaptchaV2EnterpriseTaskProxyless](https://1captcha.apifox.cn/333031438e0)           | reCaptchaV2协议企业版接口,使用内置代理 ，任务耗时90S          | `21` | ✅  |       ✅  | 
 | [TurnstileTaskProxyless](/zh-CN/TurnstileTaskProxyless.md)              | CloudflareTurnstile协议接口              | `6` |✅  | ✅   |
 | [HCaptchaClassification](/zh-CN/HCaptchaClassification.md)              | HCaptchaClassification图片接口              | `8` |✅  | 限量包月   |
+| [HCaptchaTask](https://1captcha.apifox.cn/331114665e0)              | HCaptchaTask token接口  ，steam专用            | `40` |✅  | 限量包月   |
 | [CloudFlareTask](/zh-CN/CloudFlareTask.md)                         | CloudFlare5秒盾协议接口,需要传入代理     | `7` | ✅ |   ✅|
 | [RecaptchaV3TaskProxylessS9](/zh-CN/RecaptchaV3TaskProxylessS9.md)               | reCaptcha V3高分协议接口,使用内置代理       | `21` |✅   |      ❌️  |
 | [RecaptchaV3EnterpriseTaskProxyless](/zh-CN/RecaptchaV3EnterpriseTaskProxyless.md)    | 企业版 reCaptcha V3 协议接口,使用内置代理| `21` |✅  |      ❌️  |
